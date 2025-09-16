@@ -1,0 +1,278 @@
+---
+interface Props {
+  target: string | Date;   // e.g. "2025-10-18 08:00" (local), or "2025-10-18T08:00:00+02:00"
+  showLabels?: boolean;
+}
+const { target, showLabels = true } = Astro.props as Props;
+---
+
+<!-- Load Alpine once -->
+<script is:inline>
+  if (!window.Alpine) {
+    const s = document.createElement('script');
+    s.src = 'https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js';
+    s.defer = true;
+    document.head.appendChild(s);
+  }
+</script>
+
+<section
+  x-data="flipCountdown2d({ target: $el.dataset.target })"
+  x-init="start()"
+  data-target={typeof target === 'string' ? target : target.toISOString()}
+  class="grid place-items-center"
+  style="--flip-size: clamp(46px, 10vw, 76px);" 
+>
+  <div class="flex items-end gap-4 sm:gap-6 select-none" aria-label="Countdown">
+    <!-- Days -->
+    <div class="flex items-center gap-2 sm:gap-3">
+      <div class="flip-digit">
+        <div class="card">
+          <div class="top"><span class="digit" x-text="dTens"></span></div>
+          <div class="bottom"><span class="digit" x-text="dTens"></span></div>
+          <div class="flip top-half" :class="flipD2" @animationend="flipD2=''"><span class="digit" x-text="prev.dTens"></span></div>
+          <div class="flip bottom-half" :class="flipD2b" @animationend="flipD2b=''"><span class="digit" x-text="dTens"></span></div>
+        </div>
+      </div>
+      <div class="flip-digit">
+        <div class="card">
+          <div class="top"><span class="digit" x-text="dOnes"></span></div>
+          <div class="bottom"><span class="digit" x-text="dOnes"></span></div>
+          <div class="flip top-half" :class="flipD1" @animationend="flipD1=''"><span class="digit" x-text="prev.dOnes"></span></div>
+          <div class="flip bottom-half" :class="flipD1b" @animationend="flipD1b=''"><span class="digit" x-text="dOnes"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sep">:</div>
+
+    <!-- Hours -->
+    <div class="flex items-center gap-2 sm:gap-3">
+      <div class="flip-digit">
+        <div class="card">
+          <div class="top"><span class="digit" x-text="hTens"></span></div>
+          <div class="bottom"><span class="digit" x-text="hTens"></span></div>
+          <div class="flip top-half" :class="flipH1" @animationend="flipH1=''"><span class="digit" x-text="prev.hTens"></span></div>
+          <div class="flip bottom-half" :class="flipH1b" @animationend="flipH1b=''"><span class="digit" x-text="hTens"></span></div>
+        </div>
+      </div>
+      <div class="flip-digit">
+        <div class="card">
+          <div class="top"><span class="digit" x-text="hOnes"></span></div>
+          <div class="bottom"><span class="digit" x-text="hOnes"></span></div>
+          <div class="flip top-half" :class="flipH2" @animationend="flipH2=''"><span class="digit" x-text="prev.hOnes"></span></div>
+          <div class="flip bottom-half" :class="flipH2b" @animationend="flipH2b=''"><span class="digit" x-text="hOnes"></span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sep">:</div>
+
+    <!-- Minutes -->
+    <div class="flex items-center gap-2 sm:gap-3">
+      <div class="flip-digit">
+        <div class="card">
+          <div class="top"><span class="digit" x-text="mTens"></span></div>
+          <div class="bottom"><span class="digit" x-text="mTens"></span></div>
+          <div class="flip top-half" :class="flipM1" @animationend="flipM1=''"><span class="digit" x-text="prev.mTens"></span></div>
+          <div class="flip bottom-half" :class="flipM1b" @animationend="flipM1b=''"><span class="digit" x-text="mTens"></span></div>
+        </div>
+      </div>
+      <div class="flip-digit">
+        <div class="card">
+          <div class="top"><span class="digit" x-text="mOnes"></span></div>
+          <div class="bottom"><span class="digit" x-text="mOnes"></span></div>
+          <div class="flip top-half" :class="flipM2" @animationend="flipM2=''"><span class="digit" x-text="prev.mOnes"></span></div>
+          <div class="flip bottom-half" :class="flipM2b" @animationend="flipM2b=''"><span class="digit" x-text="mOnes"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {showLabels && (
+    <div class="mt-3 flex justify-center gap-20 text-xs uppercase tracking-wider text-zinc-400">
+      <span class="w-16 text-center">Days</span>
+      <span class="w-16 text-center">Hours</span>
+      <span class="w-16 text-center">Minutes</span>
+    </div>
+  )}
+</section>
+
+<style>
+  .flip-digit {
+    --flip-ratio: 1.2;         /* height/width ratio */
+    --digit-scale: 1.15;       /* glyph scale inside card */
+    width: var(--flip-size);
+    height: calc(var(--flip-size) * var(--flip-ratio));
+    perspective: 800px;
+    transform-style: preserve-3d;
+    position: relative;
+    font-size: calc(var(--flip-size) * var(--digit-scale));
+  }
+
+  .card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    background: #0a0a0a;
+    color: #fff;
+    overflow: hidden;
+    box-shadow:
+      0 12px 25px rgba(0,0,0,.25),
+      inset 0 -2px 0 rgba(255,255,255,.08);
+  }
+
+  .top,
+  .bottom,
+  .flip {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-variant-numeric: tabular-nums;
+    overflow: hidden;
+  }
+
+  .flip { z-index: 2; will-change: transform; }
+  .top, .bottom { z-index: 1; }
+
+  .top {
+    top: 0;
+    height: 50%;
+    background: #d87204;
+    border-bottom: 1px solid rgba(255,255,255,.10);
+  }
+  .top::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,0));
+    pointer-events: none;
+  }
+
+  .bottom {
+    bottom: 0;
+    height: 50%;
+    background: var(--color-orange);
+  }
+
+  .flip {
+    backface-visibility: hidden;
+    transform-origin: center bottom;
+    transform: rotateX(0);
+    visibility: hidden;
+  }
+  .flip.top-half { top: 0; height: 50%; }
+  .flip.bottom-half { bottom: 0; height: 50%; transform-origin: center top; }
+
+  .digit {
+    display: block;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  .top span            { transform: translateY(0.26em); }
+  .bottom span         { transform: translateY(-0.26em); }
+  .flip.top-half span  { transform: translateY(0.26em); }
+  .flip.bottom-half span { transform: translateY(-0.26em); }
+
+  .flip.top-half::after,
+  .flip.bottom-half::before {
+    content: "";
+    position: absolute; inset: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .2s ease;
+  }
+  .flip.do-flip-top::after {
+    background: linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,0));
+    opacity: 1;
+  }
+  .flip.do-flip-bottom::before {
+    background: linear-gradient(0deg, rgba(0,0,0,.18), rgba(0,0,0,0));
+    opacity: 1;
+  }
+
+  .flip.do-flip-top,
+  .flip.do-flip-bottom { visibility: visible; }
+
+  @keyframes flipDown { 0% { transform: rotateX(0) } 100% { transform: rotateX(-90deg) } }
+  @keyframes flipUp   { 0% { transform: rotateX(90deg) } 100% { transform: rotateX(0) } }
+
+  .do-flip-top    { animation: flipDown .28s ease-in forwards; }
+  .do-flip-bottom { animation: flipUp   .38s cubic-bezier(.23,1,.32,1) .11s forwards; }
+
+  .sep {
+    font-weight: 600;
+    font-size: calc(var(--flip-size) * 0.8);
+    line-height: 1;
+    transform: translateY(2px);
+  }
+</style>
+
+<script is:inline>
+  function flipCountdown2d({ target }) {
+    function parseTarget(t) {
+      if (typeof t !== 'string') return new Date(t);
+      const trimmed = t.trim();
+      if (/^\d{4}-\d{2}-\d{2}\s+\d{2}:\d{2}/.test(trimmed)) {
+        return new Date(trimmed.replace(' ', 'T'));
+      }
+      return new Date(trimmed);
+    }
+    const pad2 = n => String(n).padStart(2,'0');
+
+    return {
+      dTens:'0', dOnes:'0',
+      hTens:'0', hOnes:'0',
+      mTens:'0', mOnes:'0',
+      prev:{ dTens:'0', dOnes:'0', hTens:'0', hOnes:'0', mTens:'0', mOnes:'0' },
+      flipD2:'', flipD2b:'', flipD1:'', flipD1b:'',
+      flipH1:'', flipH1b:'', flipH2:'', flipH2b:'',
+      flipM1:'', flipM1b:'', flipM2:'', flipM2b:'',
+      targetDate: parseTarget(target),
+
+      start(){
+        const tick = () => {
+          const now = new Date();
+          let diff = this.targetDate.getTime() - now.getTime();
+          diff = Math.floor(diff/60000)*60000 + (now.getSeconds()===0?0:60000);
+          if (diff <= 0) diff = 0;
+
+          const totalMins = Math.floor(diff / 60000);
+          const days = Math.floor(totalMins / 1440);
+          const hours = Math.floor((totalMins % 1440) / 60);
+          const minutes = totalMins % 60;
+
+          const [d1, d0] = pad2(days);
+          const [h1, h0] = pad2(hours);
+          const [m1, m0] = pad2(minutes);
+
+          this.update('dTens', d1, 'flipD2','flipD2b');
+          this.update('dOnes', d0, 'flipD1','flipD1b');
+          this.update('hTens', h1, 'flipH1','flipH1b');
+          this.update('hOnes', h0, 'flipH2','flipH2b');
+          this.update('mTens', m1, 'flipM1','flipM1b');
+          this.update('mOnes', m0, 'flipM2','flipM2b');
+        };
+
+        tick();
+        const now = new Date();
+        const ms = 60000 - (now.getSeconds()*1000 + now.getMilliseconds());
+        setTimeout(() => { tick(); setInterval(tick, 60000); }, ms);
+      },
+
+      update(key, next, topCls, botCls){
+        if (this[key] === next) return;
+        this.prev[key] = this[key];
+        this[key] = next;
+        this[topCls] = 'do-flip-top';
+        this[botCls] = 'do-flip-bottom';
+      }
+    }
+  }
+</script>
