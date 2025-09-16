@@ -2,26 +2,20 @@
 import Instantphoto from "./instantphoto.astro";
 ---
 
-<section class="relative w-fit mx-auto mt-10 h-[400px]" x-data="{ step: 0 }" x-init="setInterval(() => { step = (step + 1) % 20 }, 1000)">
-  <div class="absolute transition-all duration-1000 ease-in-out transform -translate-x-full" :class="{ 'translate-x-0 -rotate-6': step >= 1 && step < 15 }">
+<section class="relative w-fit mx-auto mt-10 h-[400px] flex items-center justify-center">
+  <div class="absolute -rotate-6">
     <Instantphoto photo="/images/jonas.png" navn="Jonas" />
   </div>
 
-  <div class="absolute transition-all duration-1000 ease-in-out transform translate-y-full" :class="{ 'translate-y-0 -rotate-2': step >= 3 && step < 15 }">
+  <div class="absolute -rotate-2">
     <Instantphoto photo="/images/birgitte.png" navn="Birgitte" />
   </div>
 
-  <div class="absolute transition-all duration-1000 ease-in-out transform translate-x-full" :class="{ 'translate-x-0 rotate-4': step >= 5 && step < 15 }">
+  <div class="absolute rotate-4">
     <Instantphoto photo="/images/anders.png" navn="Anders" />
   </div>
 
-  <div class="absolute transition-all duration-1000 ease-in-out transform -translate-y-full" :class="{ 'translate-y-0 rotate-2': step >= 7 && step < 15 }">
+  <div class="absolute rotate-2">
     <Instantphoto photo="/images/stefan.png" navn="Stefan" />
   </div>
 </section>
-
-<style>
-  section {
-    height: 400px;
-  }
-</style>

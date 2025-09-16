@@ -5,21 +5,46 @@ import { Image } from "astro:assets";
 import thumbsup from "../assets/images/thumbsup.png";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
+import Judges from "../components/judges.astro";
 ---
 
-<!-- *************************************************************************************************************************************
-*******************************************farver fjernes fra grids når alt er på plads********************************************** 
- *****************************************************************************************************************************************-->
 <MainLayout title="Information">
-  <Heading htmheading="h1" class="text-lg">Who are we?</Heading>
-  <!-- _________________________________________________Who are we? section_________________________________________________ -->
-  <section class="bg-red-300"></section>
-  <!-- _________________________________________________The judges_section_________________________________________________ -->
-  <section class="bg-blue-300">
-    <Heading htmheading="h2" class="text-lg">The judges</Heading>
-  </section>
-  <!-- _________________________________________________The sponsors_section_________________________________________________ -->
-  <section class="bg-yellow-300">
-    <Heading htmheading="h2" class="text-lg">Sponsors</Heading>
-  </section>
+  <div class="relative">
+    <!-- Vertical lines -->
+    <div class="absolute right-2 top-0 w-4 h-full bg-blue"></div>
+    <div class="absolute right-8 top-0 w-4 h-full bg-dgrey"></div>
+    <div class="absolute right-14 top-0 w-4 h-full bg-pink"></div>
+    <div class="absolute right-20 top-0 w-4 h-full bg-orange"></div>
+
+    <!-- Content -->
+    <div class="relative z-10">
+      <Heading htmheading="h1" class="text-lg">Who are we?</Heading>
+      <!-- Who are we? section -->
+      <section class="grid grid-cols-4 mx-[20px]">
+        <h1 class="font-bold text-5xl col-span-3">Who are we?</h1>
+        <img class="col-start-3 col-span-1" src="/images/info.svg" alt="tegning der tænker">
+        <div class="col-start-1 col-span-3">
+          <Text>Instant Day is a small project run by a couple of lecturers from the Multimedia Design programme at EK - Business Academy Copenhagen. Instant Day is a bi-annual project where lecturers and students collaborate on a digital design and communication project related to the Instant Day competition (this website). In essence, we just want to promote instant photography and have fun while doing it. Cheers.</Text>
+        </div>
+      </section>
+      
+      <!-- Horizontal line -->
+      <div class="w-50 h-4 bg-orange my-8"></div>
+
+      <!-- Rest of your sections -->
+      <!-- _________________________________________________The judges_section_________________________________________________ -->
+      <section >
+        <Heading htmheading="h2" class="text-lg">The judges</Heading>
+        <Text>Submissions will be reviewed by:</Text>
+        <Judges />
+      </section>
+      <!-- _________________________________________________The sponsors_section_________________________________________________ -->
+      <section class="bg-blue text-primary mt-15">
+        <Heading htmheading="h2" class="text-lg">Sponsors</Heading>
+        <Text>Instant Day is not affiliated to any companies within the Instant Photography industry. The only organisation backing us is EK - Business Academy Copenhagen. 
+          At least so far;-) </Text>
+          <Link href="https://www.ek.dk/" class="underline">www.ek.dk</Link>
+      </section>
+    </div>
+  </div>
 </MainLayout>
