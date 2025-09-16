@@ -11,7 +11,7 @@ import Hero from "../components/Hero.astro";
 <!-- *************************************************************************************************************************************
 *******************************************farver fjernes fra grids når alt er på plads********************************************** 
  *****************************************************************************************************************************************-->
-<MainLayout title="Titel">
+<MainLayout title="InstantDay">
   <Hero> <div></div></Hero>
   <!-- _________________________________________________hero sektion_________________________________________________ -->
   <!-- calc(100vh - 10vh);" skal justeres efter headers højde -->
@@ -26,14 +26,23 @@ import Hero from "../components/Hero.astro";
     </div>
   </section>
   <!-- _________________________________________________section_what_is_________________________________________________ -->
-  <section class="section_what_is"></section>
+  <section class="section_what_is bg-blue-300">
+    <Heading htmheading="h2" class="text-lg">What is instant day?</Heading>
+  </section>
   <!-- _________________________________________________section_why_instant_________________________________________________ -->
-  <section class="section_why_instant"></section>
+  <section class="section_why_instant bg-yellow-300">
+    <Heading htmheading="h2" class="text-lg">Why instant photos?</Heading>
+  </section>
   <!-- _________________________________________________section_how_to_________________________________________________ -->
-  <section class="section_how_to"></section>
-  7 <!-- _________________________________________________section_inspiration_________________________________________________ -->
-  <section class="section_inspiration"></section>
+  <section class="section_how_to bg-green-300">
+    <Heading htmheading="h2" class="text-lg">How to participate</Heading>
+  </section>
+  <!-- _________________________________________________section_inspiration_________________________________________________ -->
+  <section class="section_inspiration bg-orange-300">
+    <Heading htmheading="h2" class="text-lg">inspiration</Heading>
+  </section>
   <!-- _________________________________________________share_________________________________________________ -->
-  <section class="share"></section>
+  <section class="share bg-purple-300">
+    <Heading htmheading="h2" class="text-lg">Share</Heading>
+  </section>
 </MainLayout>
-½

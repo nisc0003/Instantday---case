@@ -1,0 +1,27 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import Link from "../components/Link.astro";
+import { Image } from "astro:assets";
+import thumbsup from "../assets/images/thumbsup.png";
+import Heading from "../components/Heading.astro";
+import Text from "../components/Text.astro";
+---
+
+<!-- *************************************************************************************************************************************
+*******************************************farver fjernes fra grids når alt er på plads********************************************** 
+ *****************************************************************************************************************************************-->
+<MainLayout title="Winners & nominees">
+  <!-- _________________________________________________Winners & nominees_________________________________________________ -->
+  <section>
+    <div class="bg-green-300">
+      <Heading htmheading="h1" class="text-lg">Winners & nominees</Heading>
+    </div>
+    <div class="bg-red-300">
+      <Heading htmheading="h3" class="text-lg">The Winner</Heading>
+    </div>
+  </section>
+  <!-- _________________________________________________Best of 2025 - nominees_________________________________________________ -->
+  <section class="grid grid-cols-4 bg-blue-300">
+    <Heading htmheading="h3" class="text-lg">Best of 2025 - nominees</Heading>
+  </section>
+</MainLayout>
