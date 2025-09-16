@@ -1,0 +1,8 @@
+---
+const { photo, navn } = Astro.props;
+---
+
+<div class="bg-white text-grey border-solid border-2 px-4 w-80 pb-10 pt-4">
+  <img class="w-full object-cover" src={photo} alt={navn} />
+  <h4 class="font-bold mt-4">{navn}</h4>
+</div>
