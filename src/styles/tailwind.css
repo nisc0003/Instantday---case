@@ -20,6 +20,11 @@
   src: url("/fonts/Domine-Regular.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "PollerOne";
+  src: url("/fonts/PollerOne-Regular.ttf") format("truetype");
+}
+
 @theme {
   /* Her tilføjes theme variable // tokens */
 
