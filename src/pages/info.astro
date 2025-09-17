@@ -29,7 +29,7 @@ import Judges from "../components/judges.astro";
       </section>
       
       <!-- Horizontal line -->
-      <div class="w-50 md:w-300 h-4 md:h-8 bg-orange my-8"></div>
+      <div class="w-50 md:w-300 h-4 md:h-8 bg-orange my-8 animate-[slide-in_0.5s_ease-out_forwards]"></div>
 
       <!-- Rest of your sections -->
       <!-- _________________________________________________The judges_section_________________________________________________ -->
@@ -80,3 +80,9 @@ import Judges from "../components/judges.astro";
     </div>
   </div>
 </MainLayout>
+<style>
+  @keyframes slide-in {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+  </style>
