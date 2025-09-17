@@ -5,6 +5,95 @@ import { Image } from "astro:assets";
 import thumbsup from "../assets/images/thumbsup.png";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
+import PhotoGalleri from "../components/PhotoGalleri.astro"
+
+const photos = [
+
+  {
+    src: "/images/02-amager-forbraending.webp",
+    title: "Amager Forbrænding",
+    by: "Stefan Grage",
+    description:
+      "I'd give my right arm for a cigarette. Taken with a Lomomatic Square.",
+  },
+  {
+    src: "/images/03-amager-strand.webp",
+    title: "Amager Strand",
+    by: "Stefan Grage",
+    description:
+      "From this angle, Copenhagen looks like a big city. Taken with a Polaroid Now+ gen 2, with a yellow tint filter.",
+  },
+  {
+    src: "/images/04-burger-king.webp",
+    title: "Hands off my happy meal!",
+    by: "Stefan Grage",
+    description:
+      "A casual snap from Burger King. As it shows, the youngest kid didn't want to share his happy meal (or whatever kids meal is called in Burger King). Taken with an Instax Mini (can't remember which camera).",
+  },
+  {
+    src: "/images/05-dobbelt-exp-orestad.webp",
+    title: "2 x Ørestad",
+    by: "Stefan Grage",
+    description:
+      "A double exposure from my neighbourhood, Ørestad. Taken with a Lomomatic Square.",
+  },
+  {
+    src: "/images/06-loserup-strand.webp",
+    title: "Laserup Strand",
+    by: "Stefan Grage",
+    description:
+      "Too cold to take a dip. So I took a photo instead. The polaroid had an awful magenta color cast, but I ended up liking it. Taken with a Polaroid Now+ gen 2 and an i-Type film, which I probably stored incorrectly.",
+  },
+  {
+    src: "/images/07-orestad-sort-hvid.webp",
+    title: "New meets old",
+    by: "Stefan Grage",
+    description:
+      "I wanted to catch the new city development district, Ørestad, in a shade of old school. So I used a Polaroid Now+ gen 2 in tripod mode with an i-Type black and white film in order to make a long exposure.",
+  },
+  {
+    src: "/images/08-karlstrup_kalkgrav_kaffe.webp",
+    title: "Kastrup & coffee",
+    by: "Stefan Grage",
+    description:
+      "Scene beauty of a former lime pit with a twist of coffee: the polaroid was soaked in coffee for a couple of weeks. That gave it a nice tan.",
+  },
+  {
+    src: "/images/09-amager-strand-nat.webp",
+    title: "Amager Strand at night",
+    by: "Stefan Grage",
+    description:
+      "Amager Strand, Copenhagen. Locally referred to as Copenhagen's manhattan. Long exposure. Polaroid Now+ gen 2 in manual mode with an i-Type color film to make a long exposure.",
+  },
+  {
+    src: "/images/10-amager-strand-vandbad.webp",
+    title: "Close to the sea",
+    by: "Stefan Grage",
+    description:
+      "Amager Strand is close to the sea. So I wanted to give this polaroid a twist of water: The polaroid soaked for around three weeks in water. I used a Polaroid Now+ gen 2.",
+  },
+  {
+    src: "/images/11-instax-mikro-1.webp",
+    title: "Micro adventure 1",
+    by: "Stefan Grage",
+    description:
+      "The beach at my summer house in Læsørup. Expired Instax film. I microwaved it. I should have studied how to microwave an instant image: it caught fire in the oven.",
+  },
+  {
+    src: "/images/12-instax-mikro-2.webp",
+    title: "Micro adventure 2",
+    by: "Stefan Grage",
+    description:
+      "The beach at my summer house in Læsørup. Expired Instax film. I microwaved it. I should have studied how to microwave an instant image: it caught fire in the oven.",
+  },
+  {
+    src: "/images/13-amerikaplads_nordhavnen.webp",
+    title: "Nordhavn at night",
+    by: "Stefan Grage",
+    description:
+      "Nordhavn, Copenhagen, at night. Long exposure with expired film. I used a Polaroid in manual mode with an i-Type film to make a long exposure.",
+  },
+];
 ---
 
 <!-- *************************************************************************************************************************************
@@ -21,7 +110,8 @@ import Text from "../components/Text.astro";
     </div>
   </section>
   <!-- _________________________________________________Best of 2025 - nominees_________________________________________________ -->
-  <section class="grid grid-cols-4 bg-blue-300">
+  <section class=" grid bg-blue-300">
     <Heading htmheading="h3" class="text-lg">Best of 2025 - nominees</Heading>
+    <PhotoGalleri photos={photos} />
   </section>
 </MainLayout>
