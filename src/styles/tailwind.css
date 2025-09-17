@@ -31,11 +31,12 @@
   /*Farver */
   --color-primary: #fbfaf0;
   --color-pink: #be7c79;
-  --color-orange: #F18922;
-  --color-blue: #55B6A9;
-  --color-dgrey: #26241D;
+  --color-orange: #f18922;
+  --color-blue: #55b6a9;
+  --color-dgrey: #26241d;
 
   /*Typografi */
+  --font-hero: "PollerOne", cursive;
   --font-display: "Honk", monospace;
   --font-sans: "Quicksand", sans-serif;
   --font-serif: "Domine", serif;
