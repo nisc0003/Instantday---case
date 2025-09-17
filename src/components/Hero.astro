@@ -1,0 +1,26 @@
+---
+import Link from "../components/Link.astro";
+import Heading from "../components/Heading.astro";
+---
+
+<section
+  class="bg-black place-content-center grid"
+  style="min-height: calc(100vh - 20vh);"
+>
+  <div
+    class="grid grid-cols-4 auto-rows-auto gap-16 grid-rows-[min-content] bg-black text-center"
+  >
+    <Heading htmheading="h1" size="hero" font="hero"
+      >InstantDay <br /> 2025</Heading
+    >
+    <Heading htmheading="h2" size="large" font="hero">10:57:38</Heading>
+    <!-- timer indsættes -->
+    <div class="col-span-4 col-start-1 place-self-center">
+      <Link variant="primary" href="/shareyourinstant/">Share your instant</Link
+      >
+    </div>
+
+    <!-- ------------------- -->
+  </div>
+  <img src="/images/hero_figure.svg" alt="" />
+</section>
