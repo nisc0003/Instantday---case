@@ -1,6 +1,8 @@
 ---
 import Link from "../components/Link.astro";
 import Heading from "../components/Heading.astro";
+import FlipClock from "./FlipClock.astro";
+const launch = "2025-10-18 08:00";
 ---
 
 <section
@@ -13,8 +15,8 @@ import Heading from "../components/Heading.astro";
     <Heading htmheading="h1" size="hero" font="hero"
       >InstantDay <br /> 2025</Heading
     >
-    <Heading htmheading="h2" size="large" font="hero">10:57:38</Heading>
-    <!-- timer indsættes -->
+    <div class="col-span-4"><FlipClock target={launch} /></div>
+    
     <div class="col-span-4 col-start-1 place-self-center mt-2">
       <Link variant="primary" href="/shareyourinstant/">Share your instant</Link
       >
