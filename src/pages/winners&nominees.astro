@@ -109,8 +109,14 @@ const photos = [
     </div>
   </section>
   <!-- _________________________________________________Best of 2025 - nominees_________________________________________________ -->
-  <section class="grid bg-[var(--color-dgrey)]">
-    <Heading htmheading="h3" class="text-lg">Best of 2025 - nominees</Heading>
+  <section class="grid bg-[var(--color-dgrey)] p-[20px] md:p-[100px]">
+    <Heading htmheading="h3" class="text-lg" stylingclasses="pb-6">Best of 2025 - nominees</Heading>
     <PhotoGalleri photos={photos} />
   </section>
+  <div class="grid col-span-4 align-self-center gap-3 row-start-  bg-[var(--color-dgrey)]">
+    <div class="h-3 w-60 md:w-250 md:h-6  bg-orange"></div>
+    <div class="h-3 w-80 md:w-300 md:h-6  bg-blue"></div>
+    <div class="h-3 w-75 md:w-270 md:h-6  bg-pink"></div>
+  </div>
+  
 </MainLayout>
