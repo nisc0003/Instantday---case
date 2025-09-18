@@ -10,9 +10,7 @@ import Formular from "../components/Formular.astro";
 *******************************************farver fjernes fra grids når alt er på plads********************************************** 
  *****************************************************************************************************************************************-->
 <MainLayout title="Share Your Instant">
-<section class="relative mx-auto max-w-6xl px-6 md:px-10 py-12">
-  <div class="grid grid-cols-4 md:grid-cols-12 gap-x-10 gap-y-12">
-
+<section class="grid grid-cols-4 mx-[20px] md:grid-cols-12 md:mx-[100px] gap-x-10 gap-y-12">
     <div class="col-span-4 md:col-span-12">
       <Heading>Winners & Nominees</Heading>
     </div>
@@ -31,7 +29,11 @@ import Formular from "../components/Formular.astro";
        class="w-full max-w-[260px] md:max-w-[340px]" />
     </div>
 
-    <div class="col-span-4 md:col-span-6 md:col-start-1">
+    
+</section>
+
+<section class="grid grid-cols-4 mx-[20px] md:grid-cols-12 md:mx-[100px] gap-x-10 gap-y-12 mt-10">
+  <div class="col-span-4 md:col-span-5 md:col-start-1">
       <div class="border border-black/30 shadow-[0_16px_24px_rgba(0,0,0,0.25)]">
        <img src="/images/01-amager-faelled.webp" alt="Amager Fælled" class=""/>
       </div>
@@ -46,8 +48,16 @@ import Formular from "../components/Formular.astro";
         Denmark. Taken with a Lomomatic Square.
       </Text>
     </div>
-   </div>
 </section>
+
+<section class="grid col-span-4 md:col-span-12 gap-3">
+    <div class="h-3 md:h-6 bg-orange ml-auto w-3/7"></div>
+    <div class="h-3 md:h-6 bg-blue ml-auto w-2/6"></div>
+    <div class="h-3 md:h-6 bg-black ml-auto w-3/6"></div>
+    <div class="h-3 md:h-6 bg-pink ml-auto w-[98%]"></div>
+ </section>
+
+
 
 
 
@@ -56,7 +66,6 @@ import Formular from "../components/Formular.astro";
   <section class="bg-red-300"></section>
   <!-- _________________________________________________section_submit_________________________________________________ -->
   <section class="">
-    <Heading htmheading="h2" class="text-lg">Submit here!</Heading>
     <Formular></Formular>
   </section>
 </MainLayout>
