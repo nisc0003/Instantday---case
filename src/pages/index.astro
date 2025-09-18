@@ -19,8 +19,8 @@ import Art_buttons from "../components/Art_photography.astro";
       class="grid col-span-4 col-start-1 place-self-center mx-[20px] md:col-span-2 md:ml-[100px] md:mr-[0px]"
     >
       <Heading
-        htmheading="h2"
-        class="text-lg"
+        size="h1"
+        font="header"
         stylingclasses="intersect:animate-fade intersect:animate-delay-100"
         >What is instant day?</Heading
       >
@@ -63,16 +63,16 @@ import Art_buttons from "../components/Art_photography.astro";
     class="section_why_instant bg-pink grid px-[20px] md:px-[60px] py-[30px] md:py-[90px]"
   >
     <Heading
-      htmheading="h1"
-      class="font-bold"
-      stylingclasses="intersect:animate-fade intersect:animate-delay-100"
+      size="h2"
+      font="header"
+      stylingclasses="intersect:animate-fade intersect:animate-delay-100 text-white"
       >Why instant photos?</Heading
     >
-    <div class="grid gap-2 place-items-center md:grid-cols-3">
+    <div class="grid gap-2 place-items-center md:grid-cols-3 md:palce">
       <div
         class="md:col-span-2 md:py-10 intersect:animate-fade-right intersect:animate-delay-200"
       >
-        <Text
+        <Text teksttype="brødtekst" stylingclasses="text-white bold"
           >Instant Photography is a testament to life: It all started back in
           the 1940's with a 3 year old kid. She wanted to see her fathers images
           right away. The father, Edwin Land, embarked on a mission: To invent
@@ -88,7 +88,7 @@ import Art_buttons from "../components/Art_photography.astro";
       <div
         class="md:col-span-2 md:py-10 intersect:animate-fade-right intersect:animate-delay-400"
       >
-        <Text
+        <Text teksttype="brødtekst" stylingclasses="text-white bold"
           >Instant photography turned into big business in the 70's and 80's,
           until the digital era almost killed the industry. The massive amount
           of time wasted on the small screens have spurred a counterreaction:
@@ -103,15 +103,17 @@ import Art_buttons from "../components/Art_photography.astro";
   <section
     class="section_how_to mx-[20px] md:mx-[100px]mx-[20px] mt-20 mb-20 grid text-center"
   >
-    <Heading htmheading="h2" class="text-lg">How to participate</Heading>
+    <Heading size="h2" font="header">How to participate</Heading>
   </section>
   <!-- _________________________________________________section_inspiration_________________________________________________ -->
   <section class="section_inspiration grid grid-cols-1 grid-rows-auto">
     <div class="text-center bg-blue pt-10 pb-20 row-span-2">
-      <Heading htmheading="h2" class="text-lg">Inspiration</Heading>
+      <Heading size="h2" font="header" stylingclasses="text-white"
+        >Inspiration</Heading
+      >
     </div>
     <div
-      class="grid grid-cols-2 gap-4 px-[20px] md:px-[60px] py-[30px] md:py-[90px] z-20 md:grid-cols-5"
+      class="grid grid-cols-2 gap-4 px-[20px] md:px-[60px] py-[10px] md:py-[20px] z-20 md:grid-cols-5"
     >
       <img
         src="/images/Kagebordet.webp"
@@ -159,7 +161,7 @@ import Art_buttons from "../components/Art_photography.astro";
   <section class="share flex flex-col">
     <Art_buttons />
     <div class="flex flex-col palce-self-center items-center gap-4 py-10">
-      <Heading htmheading="h2" class="text-lg">Feeling inspired?</Heading>
+      <Heading size="h2" font="header">Feeling inspired?</Heading>
 
       <div>
         <Link variant="secondary" href="/shareyourinstant/"

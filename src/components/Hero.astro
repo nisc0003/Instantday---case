@@ -12,11 +12,14 @@ const launch = "2025-10-18 08:00";
   <div
     class="grid grid-cols-4 auto-rows-auto gap-8s grid-rows-[min-content] text-center"
   >
-    <Heading htmheading="h1" size="hero" font="hero"
+    <Heading
+      size="h1"
+      font="header"
+      stylingclasses="text-[45px] md:text-[96px] intersect:animate-fade intersect:animate-delay-100"
       >InstantDay <br /> 2025</Heading
     >
     <div class="col-span-4"><FlipClock target={launch} /></div>
-    
+
     <div class="col-span-4 col-start-1 place-self-center mt-2">
       <Link variant="primary" href="/shareyourinstant/">Share your instant</Link
       >
