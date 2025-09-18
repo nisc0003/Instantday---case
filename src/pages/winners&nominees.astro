@@ -110,13 +110,17 @@ const photos = [
   </section>
   <!-- _________________________________________________Best of 2025 - nominees_________________________________________________ -->
   <section class="grid bg-[var(--color-dgrey)] p-[20px] md:p-[100px]">
-    <Heading htmheading="h3" class="text-lg" stylingclasses="pb-6">Best of 2025 - nominees</Heading>
+    <Heading htmlheading="h3" font="header" stylingclasses=" pb-6 text-[var(--color-primary)]">
+      Best of 2025 - nominees
+    </Heading>
+  
     <PhotoGalleri photos={photos} />
   </section>
+  
   <div class="grid grid-cols-12 gap-3 bg-[var(--color-dgrey)]">
-    <div class="h-3 md:h-6 col-span-6 bg-orange"></div> <!-- spans 6/12 -->
-    <div class="h-3 md:h-6 col-span-9 bg-blue"></div>   <!-- spans 9/12 -->
-    <div class="h-3 md:h-6 col-span-5 bg-pink"></div>   <!-- spans 5/12 -->
+    <div class="h-3 md:h-6 col-span-6 bg-orange"></div>
+    <div class="h-3 md:h-6 col-span-9 bg-blue"></div>
+    <div class="h-3 md:h-6 col-span-5 bg-pink"></div>
   </div>
   
 </MainLayout>
