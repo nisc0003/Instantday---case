@@ -1,8 +1,5 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Link from "../components/Link.astro";
-import { Image } from "astro:assets";
-import thumbsup from "../assets/images/thumbsup.png";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import PhotoGalleri from "../components/PhotoGalleri.astro";
@@ -12,15 +9,13 @@ const photos = [
     src: "/images/02-amager-forbraending.webp",
     title: "Amager Forbrænding",
     by: "Stefan Grage",
-    description:
-      "I'd give my right arm for a cigarette. Taken with a Lomomatic Square.",
+    description: "I'd give my right arm for a cigarette. Taken with a Lomomatic Square.",
   },
   {
     src: "/images/03-amager-strand.webp",
     title: "Amager Strand",
     by: "Stefan Grage",
-    description:
-      "From this angle, Copenhagen looks like a big city. Taken with a Polaroid Now+ gen 2, with a yellow tint filter.",
+    description: "From this angle, Copenhagen looks like a big city. Taken with a Polaroid Now+ gen 2, with a yellow tint filter.",
   },
   {
     src: "/images/04-burger-king.webp",
@@ -95,28 +90,85 @@ const photos = [
 ];
 ---
 
-<!-- *************************************************************************************************************************************
-*******************************************farver fjernes fra grids når alt er på plads********************************************** 
- *****************************************************************************************************************************************-->
 <MainLayout title="Winners & nominees">
-  <!-- _________________________________________________Winners & nominees_________________________________________________ -->
-  <section>
-    <div class="bg-green-300">
-      <Heading htmheading="h1" class="text-lg">Winners & nominees</Heading>
+  <!-- Winners & Nominees Section -->
+  <section class="grid grid-cols-4 mx-[20px] md:grid-cols-12 md:mx-[100px] gap-x-10 gap-y-12">
+    <div class="col-span-4 md:col-span-12">
+      <Heading 
+        size="h1" 
+        font="header" 
+        stylingclasses="mt-10 md:mt-20"
+      >
+        Winners & Nominees
+      </Heading>
     </div>
-    <div class="bg-red-300">
-      <Heading htmheading="h3" class="text-lg">The Winner</Heading>
+
+    <div class="col-start-1 col-end-5 md:col-end-7 md:mt-20 intersect:animate-fade-right intersect:animate-delay-200">
+      <Text teksttype="brødtekst" stylingclasses="mt-4">
+        Instant Day was quite a success with more than 30.000 contributions. So it was
+        difficult to find a winner. After a couple of long but exciting days, the judges
+        agreed on the winner and the 12 nominees.
+      </Text>
+    </div>
+
+    <div class="col-span-4 md:col-span-6 flex justify-center md:justify-end">
+      <img 
+        src="/images/you-won.svg"
+        alt="you won figur"
+        class="w-full max-w-[260px] md:max-w-[340px]" 
+      />
     </div>
   </section>
-  <!-- _________________________________________________Best of 2025 - nominees_________________________________________________ -->
+
+  <!-- Winner Section -->
+  <section class="grid grid-cols-4 mx-[20px] md:grid-cols-12 md:mx-[100px] gap-x-10 gap-y-12 mt-10">
+    <div class="col-span-4 md:col-span-6 md:col-start-7 order-1 md:order-2">
+      <Heading size="h2" font="header" stylingclasses="mb-10">The Winner</Heading>
+      <Text teksttype="brødtekst" stylingclasses="font-bold intersect:animate-fade-right intersect:animate-delay-200">
+        Amager Fælled
+      </Text>
+      <Text teksttype="brødtekst" stylingclasses="underline -mb-2 intersect:animate-fade-right intersect:animate-delay-300">
+        Stefan Grage
+      </Text>
+      <Text teksttype="brødtekst" stylingclasses="intersect:animate-fade-right intersect:animate-delay-400">
+        A little snap from Amager Fælled, a large common in the southwestern part of Copenhagen,
+        Denmark. Taken with a Lomomatic Square.
+      </Text>
+    </div>
+
+    <div class="col-span-4 md:col-span-5 md:col-start-1 order-2 md:order-1 flex justify-center md:justify-start">
+      <img 
+        src="/images/01-amager-faelled.webp" 
+        alt="Amager Fælled" 
+        class="w-[60%] md:w-full object-contain"
+      />
+    </div>
+  </section>
+
+  <!-- Decorative Lines -->
+  <section class="flex flex-col gap-3 mb-4 md:mb-10">
+    <div class="h-3 md:h-6 bg-orange ml-auto w-3/7"></div>
+    <div class="h-3 md:h-6 bg-blue ml-auto w-2/6"></div>
+    <div class="h-3 md:h-6 bg-black ml-auto w-3/6"></div>
+    <div class="h-3 md:h-6 bg-pink ml-auto w-[98%]"></div>
+  </section>
+
+  <!-- Nominees Section -->
   <section class="grid bg-[var(--color-dgrey)] p-[20px] md:p-[100px]">
-    <Heading htmheading="h3" class="text-lg" stylingclasses="pb-6">Best of 2025 - nominees</Heading>
+    <Heading 
+      size="h2"
+      font="header"
+      stylingclasses="pb-6 text-primary"
+    >
+      Best of 2025 - nominees
+    </Heading>
     <PhotoGalleri photos={photos} />
   </section>
+
+  <!-- Bottom Decorative Lines -->
   <div class="grid grid-cols-12 gap-3 bg-[var(--color-dgrey)]">
-    <div class="h-3 md:h-6 col-span-6 bg-orange"></div> <!-- spans 6/12 -->
-    <div class="h-3 md:h-6 col-span-9 bg-blue"></div>   <!-- spans 9/12 -->
-    <div class="h-3 md:h-6 col-span-5 bg-pink"></div>   <!-- spans 5/12 -->
+    <div class="h-3 md:h-6 col-span-6 bg-orange"></div>
+    <div class="h-3 md:h-6 col-span-9 bg-blue"></div>
+    <div class="h-3 md:h-6 col-span-5 bg-pink"></div>
   </div>
-  
 </MainLayout>
