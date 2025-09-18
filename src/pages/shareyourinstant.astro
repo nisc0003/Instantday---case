@@ -1,8 +1,6 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Link from "../components/Link.astro";
-import { Image } from "astro:assets";
-import thumbsup from "../assets/images/thumbsup.png";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import Formular from "../components/Formular.astro";
@@ -12,6 +10,47 @@ import Formular from "../components/Formular.astro";
 *******************************************farver fjernes fra grids når alt er på plads********************************************** 
  *****************************************************************************************************************************************-->
 <MainLayout title="Share Your Instant">
+<section class="relative mx-auto max-w-6xl px-6 md:px-10 py-12">
+  <div class="grid grid-cols-4 md:grid-cols-12 gap-x-10 gap-y-12">
+
+    <div class="col-span-4 md:col-span-12">
+      <Heading>Winners & Nominees</Heading>
+    </div>
+
+    <div class="col-start-1 col-end-5 md:col-end-7 md:mt-20">
+      <Text teksttype="brødtekst" stylingclasses="mt-4">
+        Instant Day was quite a success with more than 30.000 contributions. So it was
+        difficult to find a winner. After a couple of long but exciting days, the judges
+        agreed on the winner and the 12 nominees.
+      </Text>
+    </div>
+
+    <div class="col-span-4 md:col-span-6 flex justify-center md:justify-end">
+     <img src="/images/you-won.svg"
+       alt="you won figur"
+       class="w-full max-w-[260px] md:max-w-[340px]" />
+    </div>
+
+    <div class="col-span-4 md:col-span-6 md:col-start-1">
+      <div class="border border-black/30 shadow-[0_16px_24px_rgba(0,0,0,0.25)]">
+       <img src="/images/01-amager-faelled.webp" alt="Amager Fælled" class=""/>
+      </div>
+    </div>
+
+    <div class="col-span-4 md:col-span-6 md:col-start-7">
+      <Heading stylingclasses="mb-10">The Winner</Heading>
+      <Heading stylingclasses="">Amager Fælled</Heading>
+      <Text teksttype="brødtekst" stylingclasses="underline -mb-2">Stefan Grage</Text>
+      <Text teksttype="brødtekst" stylingclasses="">
+        A little snap from Amager Fælled, a large common in the southwestern part of Copenhagen,
+        Denmark. Taken with a Lomomatic Square.
+      </Text>
+    </div>
+   </div>
+</section>
+
+
+
   <Heading htmheading="h1" class="text-lg">Shareyourinstant</Heading>
   <!-- _________________________________________________How to participate sektion_________________________________________________ -->
   <section class="bg-red-300"></section>
