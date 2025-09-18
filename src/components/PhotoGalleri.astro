@@ -12,6 +12,11 @@ export interface Props { photos: Photo[] }
 const { photos } = Astro.props
 ---
 
+<!-- Arrow above mobile gallery -->
+<div class="flex justify-end mb-2 pb-4 md:hidden px-4">
+<img src="/images/arrow.svg" alt="arrow pointing right"/>
+</div>
+
 <section class="flex gap-2 overflow-x-auto md:hidden">
   {photos.map((p) => (
     <div class="min-w-[50%] flex-shrink-0">
