@@ -240,10 +240,9 @@ const { target, showLabels = true } = Astro.props as Props;
         const tick = () => {
           const now = new Date();
           let diff = this.targetDate.getTime() - now.getTime();
-          diff = Math.floor(diff/60000)*60000 + (now.getSeconds()===0?0:60000);
-          if (diff <= 0) diff = 0;
+          if (diff < 0) diff = 0;
 
-          const totalMins = Math.floor(diff / 60000);
+          const totalMins = Math.floor(diff / 60000); // exact minutes remaining
           const days = Math.floor(totalMins / 1440);
           const hours = Math.floor((totalMins % 1440) / 60);
           const minutes = totalMins % 60;
@@ -260,10 +259,14 @@ const { target, showLabels = true } = Astro.props as Props;
           this.update('mOnes', m0, 'flipM2','flipM2b');
         };
 
-        tick();
-        const now = new Date();
-        const ms = 60000 - (now.getSeconds()*1000 + now.getMilliseconds());
-        setTimeout(() => { tick(); setInterval(tick, 60000); }, ms);
+        const schedule = () => {
+          const now = new Date();
+          const ms = 60000 - (now.getSeconds()*1000 + now.getMilliseconds());
+          setTimeout(() => { tick(); schedule(); }, ms); // re-align to next minute boundary
+        };
+
+        tick();      // draw immediately
+        schedule();  // keep aligned without drift
       },
 
       update(key, next, topCls, botCls){
