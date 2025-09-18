@@ -6,7 +6,7 @@ const currentPath = pathname.slice(1);
 <header
   x-data="{ showmenu: false, scrolled: false, loaded: false }"
   x-init="loaded = true"
-  x-on:scroll.window="scrolled = (window.scrollY > window.innerHeight * 0.25)"
+  x-on:scroll.window="scrolled = (window.scrollY > window.innerHeight * 0.5)"
   :class="scrolled ? 'bg-orange/90 sticky top-0 z-50 py-2' : 'bg-orange sticky top-0 z-50 py-4'"
   class="transition-all duration-700 ease-in-out"
 >
@@ -29,7 +29,7 @@ const currentPath = pathname.slice(1);
         />
       </a>
 
-      <!-- Flying figure image: flies in on load, flies out on scroll -->
+      <!-- Flying figure image, flies in on load, flies out on scroll -->
       <div
         :style="`transform: translateX(${scrolled ? '-500%' : loaded ? '0' : '-500%'})`"
         class="transition-all duration-700 ease-in-out overflow-hidden"
@@ -44,42 +44,49 @@ const currentPath = pathname.slice(1);
     </div>
 
     <!-- Desktop menu -->
-    <nav id="desktopmenu" class="hidden lg:block">
-      <ul class="flex flex-row gap-4">
+    <nav
+      id="desktopmenu"
+      class="hidden lg:block transition-all duration-700 ease-in-out"
+    >
+      <ul class="flex flex-row gap-12">
         <li>
-          <a href="/" class={currentPath === "" ? "italic font-bold" : "italic"}
-            >Forside</a
+          <a
+            href="/"
+            class={currentPath === ""
+              ? "text-lg md:text-xl font-extrabold"
+              : "text-lg md:text-xl "}>Forside</a
           >
         </li>
         <li>
           <a
             href="/komponentbibliotek/"
             class={currentPath === "komponentbibliotek/"
-              ? "italic font-bold"
-              : "italic"}>Komponentbibliotek</a
+              ? "text-lg md:text-xl font-extrabold"
+              : "text-lg md:text-xl "}>Komponentbibliotek</a
           >
         </li>
         <li>
           <a
             href="/winners&nominees/"
             class={currentPath === "winners&nominees/"
-              ? "italic font-bold"
-              : "italic"}>Winners & Nominees</a
+              ? "text-lg md:text-xl font-extrabold"
+              : "text-lg md:text-xl "}>Winners & Nominees</a
           >
         </li>
         <li>
           <a
             href="/shareyourinstant/"
             class={currentPath === "shareyourinstant/"
-              ? "italic font-bold"
-              : "italic"}>Share Your Instant</a
+              ? "text-lg md:text-xl font-extrabold"
+              : "text-lg md:text-xl "}>Share Your Instant</a
           >
         </li>
         <li>
           <a
             href="/info/"
-            class={currentPath === "info/" ? "italic font-bold" : "italic"}
-            >Info</a
+            class={currentPath === "info/"
+              ? "text-lg md:text-xl font-extrabold"
+              : "text-lg md:text-xl"}>Info</a
           >
         </li>
       </ul>
