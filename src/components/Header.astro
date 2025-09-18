@@ -4,22 +4,23 @@ const currentPath = pathname.slice(1);
 ---
 
 <header
-  x-data="{ showmenu: false, scrolled: false }"
-  x-on:scroll.window="scrolled = (window.scrollY > 50)"
-  :class="scrolled ? 'bg-orange sticky top-0 z-100 py-2' : 'bg-orange sticky top-0 z-100 py-4'"
-  class="transition-all duration-300"
+  x-data="{ showmenu: false, scrolled: false, loaded: false }"
+  x-init="loaded = true"
+  x-on:scroll.window="scrolled = (window.scrollY > window.innerHeight * 0.25)"
+  :class="scrolled ? 'bg-orange/90 sticky top-0 z-50 py-2' : 'bg-orange sticky top-0 z-50 py-4'"
+  class="transition-all duration-700 ease-in-out"
 >
   <div
     id="navbar"
-    class="container mx-auto flex flex-row justify-between items-center"
+    class="max-w-[100vw] mx-auto px-8 flex flex-row justify-between items-center"
   >
-    <div class="flex items-center gap-4">
+    <div class="flex items-center gap-6">
       <!-- Logo linking to index -->
       <a
         href="/"
         id="logo"
         :class="scrolled ? 'h-12' : 'h-20'"
-        class="transition-all duration-300"
+        class="transition-all duration-700 ease-in-out"
       >
         <img
           src="/images/Logo_black.svg"
@@ -27,9 +28,12 @@ const currentPath = pathname.slice(1);
           class="w-auto h-full"
         />
       </a>
+
+      <!-- Flying figure image: flies in on load, flies out on scroll -->
       <div
-        :class="scrolled ? 'h-12' : 'h-20'"
-        class="transition-all duration-300"
+        :style="`transform: translateX(${scrolled ? '-500%' : loaded ? '0' : '-500%'})`"
+        class="transition-all duration-700 ease-in-out overflow-hidden"
+        :class="scrolled ? 'opacity-0 h-12' : 'opacity-100 h-20'"
       >
         <img
           src="/images/figur.svg"
