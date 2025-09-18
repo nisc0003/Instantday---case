@@ -22,7 +22,7 @@ import Judges from "../components/judges.astro";
       <section class="grid grid-cols-4 md:grid-cols-12 mx-[20px] md:mx-[100px] ">
         <Heading size="h1" font="header" stylingclasses="col-span-3 md:col-span-6">Who are we?</Heading>
         <img class="col-start-4 md:col-start-8 col-span-1 md:col-span-3 w-full h-70 md:mt-10 row-start-2" src="/images/info.svg" alt="tegning der tænker">
-        <div class="col-start-1 col-span-3 md:col-span-7">
+        <div class="col-start-1 col-span-3 md:col-span-7 intersect:animate-fade-right intersect:animate-delay-200">
           <Text teksttype="brødtekst">Instant Day is a small project run by a couple of lecturers from the Multimedia Design programme at EK - Business Academy Copenhagen. Instant Day is a bi-annual project where lecturers and students collaborate on a digital design and communication project related to the Instant Day competition (this website). In essence, we just want to promote instant photography and have fun while doing it. Cheers.</Text>
         </div>
       </section>
@@ -45,7 +45,7 @@ import Judges from "../components/judges.astro";
         </div>
 
         <div class="relative z-20 col-span-3 md:col-span-7 md:ml-0 row-start-3">
-          <ul class="space-y-2 pl-6 md:pl-2 mt-10 md:mt-20">
+          <ul class="space-y-2 pl-6 md:pl-2 mt-10 md:mt-20 intersect:animate-fade-right intersect:animate-delay-200">
             <li>
               <Text teksttype="brødtekst">Jonas Hasle (Assistant lecturer, Multimedia Design programme at EK)</Text>
             </li>
@@ -72,7 +72,9 @@ import Judges from "../components/judges.astro";
             </Text>
           </div>
           <div class="col-span-4 md:col-span-8 mt-4 row-start-3">
-            <Link variant="primary" href="https://www.ek.dk/">www.ek.dk</Link>
+            <a href="https://kea.dk/en" target="_blank" rel="noopener noreferrer">
+                <img src="/images/logo.png" alt="KEA - Copenhagen School of Design and Technology Logo">
+            </a>
           </div>
         </div>
       </section>
