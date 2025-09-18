@@ -11,11 +11,11 @@ import Formular from "../components/Formular.astro";
  *****************************************************************************************************************************************-->
 <MainLayout title="Share Your Instant">
 <section class="grid grid-cols-4 mx-[20px] md:grid-cols-12 md:mx-[100px] gap-x-10 gap-y-12">
-    <div class="col-span-4 md:col-span-12">
-      <Heading size="h1" font="header">Winners & Nominees</Heading>
+    <div class="col-span-4 md:col-span-12 ">
+      <Heading size="h1" font="header" stylingclasses="mt-30">Winners & Nominees</Heading>
     </div>
 
-    <div class="col-start-1 col-end-5 md:col-end-7 md:mt-20">
+    <div class="col-start-1 col-end-5 md:col-end-7 md:mt-20 intersect:animate-fade-right intersect:animate-delay-200">
       <Text teksttype="brødtekst" stylingclasses="mt-4">
         Instant Day was quite a success with more than 30.000 contributions. So it was
         difficult to find a winner. After a couple of long but exciting days, the judges
@@ -39,11 +39,12 @@ import Formular from "../components/Formular.astro";
       </div>
     </div>
 
-    <div class="col-span-4 md:col-span-6 md:col-start-7">
-      <Heading size="h2" font="header" stylingclasses="mb-10">The Winner</Heading>
-      <Text teksttype="brødtekst" stylingclasses="font-bold">Amager Fælled</Text>
-      <Text teksttype="brødtekst" stylingclasses="underline -mb-2">Stefan Grage</Text>
-      <Text teksttype="brødtekst">
+    
+    <div class="col-span-4 md:col-span-6 md:col-start-7" >
+      <Heading size="h2" font="header" stylingclasses="mb-10 mt-10">The Winner</Heading>
+      <Text teksttype="brødtekst" stylingclasses="font-bold intersect:animate-fade-right intersect:animate-delay-200">Amager Fælled</Text>
+      <Text teksttype="brødtekst" stylingclasses="underline -mb-2 intersect:animate-fade-right intersect:animate-delay-300">Stefan Grage</Text>
+        <Text teksttype="brødtekst" stylingclasses="intersect:animate-fade-right intersect:animate-delay-400">
         A little snap from Amager Fælled, a large common in the southwestern part of Copenhagen,
         Denmark. Taken with a Lomomatic Square.
       </Text>
@@ -61,7 +62,7 @@ import Formular from "../components/Formular.astro";
   <!-- _________________________________________________How to participate sektion_________________________________________________ -->
 
 <section class="grid grid-cols-4 mx-[20px] md:grid-cols-12 md:mx-[100px] gap-x-10 gap-y-12">
-  <Heading size="h1" font="header">Shareyourinstant</Heading>
+  <Heading size="h1" font="header" stylingclasses="mt-30">Shareyourinstant</Heading>
   <!-- Step komponent her -->
 </section>
 
