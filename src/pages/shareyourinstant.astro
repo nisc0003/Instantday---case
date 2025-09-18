@@ -12,7 +12,7 @@ import Formular from "../components/Formular.astro";
 <MainLayout title="Share Your Instant">
 <section class="grid grid-cols-4 mx-[20px] md:grid-cols-12 md:mx-[100px] gap-x-10 gap-y-12">
     <div class="col-span-4 md:col-span-12">
-      <Heading>Winners & Nominees</Heading>
+      <Heading size="h1" font="header">Winners & Nominees</Heading>
     </div>
 
     <div class="col-start-1 col-end-5 md:col-end-7 md:mt-20">
@@ -40,10 +40,10 @@ import Formular from "../components/Formular.astro";
     </div>
 
     <div class="col-span-4 md:col-span-6 md:col-start-7">
-      <Heading stylingclasses="mb-10">The Winner</Heading>
-      <Heading stylingclasses="">Amager Fælled</Heading>
+      <Heading size="h2" font="header" stylingclasses="mb-10">The Winner</Heading>
+      <Text teksttype="brødtekst" stylingclasses="font-bold">Amager Fælled</Text>
       <Text teksttype="brødtekst" stylingclasses="underline -mb-2">Stefan Grage</Text>
-      <Text teksttype="brødtekst" stylingclasses="">
+      <Text teksttype="brødtekst">
         A little snap from Amager Fælled, a large common in the southwestern part of Copenhagen,
         Denmark. Taken with a Lomomatic Square.
       </Text>
@@ -58,14 +58,15 @@ import Formular from "../components/Formular.astro";
  </section>
 
 
-
-
-
-  <Heading htmheading="h1" class="text-lg">Shareyourinstant</Heading>
   <!-- _________________________________________________How to participate sektion_________________________________________________ -->
-  <section class="bg-red-300"></section>
+
+<section class="grid grid-cols-4 mx-[20px] md:grid-cols-12 md:mx-[100px] gap-x-10 gap-y-12">
+  <Heading size="h1" font="header">Shareyourinstant</Heading>
+  <!-- Step komponent her -->
+</section>
+
   <!-- _________________________________________________section_submit_________________________________________________ -->
   <section class="">
     <Formular></Formular>
-  </section>
+  </section> 
 </MainLayout>
