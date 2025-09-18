@@ -1,0 +1,161 @@
+---
+import Link from "../components/Link.astro";
+import Heading from "../components/Heading.astro";
+import Text from "../components/Text.astro";
+---
+
+<div class="flex flex-row gap-6 h-[100vw] md:h-[40vw] max-w-screen ">
+  <!-- step 1 -->
+  <div class="bg-orange p-4 min-w-0">
+    <div
+      id="toggle-1"
+      class="flex  justify-between items-center cursor-pointer select-none text-black"
+    >
+      <Heading
+        htmheading="h3"
+        class="text-lg text-black"
+        stylingclasses="intersect:animate-fade-right intersect:animate-duration-[900ms]"
+        >step 1</Heading
+      >
+    </div>
+
+    <div
+      id="content-1"
+      class=" hidden transition-all duration-500 ease-in-out  animate-flip-down animate-ease-out bg-white border solid border-orange"
+    >
+      <Text teksttype="brødtekst" class="text-black" stylingclasses="w-50 ">
+        Take a photo of your instant with your smartphone (or scan it for max. quality) - the file should be between 2 - 10 MB, in jpg/jpeg or webp format.
+       <img src="/images/step1.png" alt="billede af første step">
+      </Text>
+    </div>
+  </div>
+
+  <!-- step 2 -->
+  <div class="bg-dgrey p-4 min-w-0">
+    <div
+      id="toggle-2"
+      class="flex  justify-between items-center cursor-pointer select-none text-white"
+    >
+      <Heading
+        htmheading="h3"
+        class=" text-white"
+        stylingclasses="intersect:animate-fade-right intersect:animate-duration-[1000ms]"
+        >Step 2</Heading
+      >
+   
+    </div>
+
+    <div
+      id="content-2"
+      class="max-w-300 hidden transition-all duration-500 ease-in-out overflow-hidden text-black animate-flip-down animate-ease-out bg-white border solid border-dgrey  text-center"
+    >
+      <Text class="text-white" stylingclasses=" ">
+        Upload your photo and credentials 
+        <Link href="/shareyourinstant" variant="primary" >Share here</Link>.
+        <img src="/images/step2.png" alt="">
+    
+      </Text>
+    </div>
+  </div>
+
+  <!-- step 3 -->
+  <div class="bg-pink p-4 min-w-0">
+    <div
+      id="toggle-3"
+      class="flex  justify-between items-center cursor-pointer select-none text-black"
+    >
+      <Heading
+        htmheading="h3"
+        class="text-lg text-black"
+        stylingclasses="intersect:animate-fade-right intersect:animate-duration-[1100ms]"
+        >Step 3</Heading
+      >
+     
+    </div>
+
+    <div
+      id="content-3"
+      class=" hidden transition-all duration-500 ease-in-out overflow-hidden text-black animate-flip-down animate-ease-out bg-white border solid border-pink text-center"
+    >
+      <Text>
+        Agree to our terms and conditions [link til din “terms and conditions” sektion på “share your instants” siden]. The short version: Participants have to be 18+, portrayed persons must have given consent, and you agree that your instant can be exhibited and used to promote the photo contest. 
+       <img src="/images/step3.png" alt="">
+      </Text>
+    </div>
+  </div>
+
+  <!-- step 4 -->
+  <div class="bg-blue p-4">
+    <div
+      id="toggle-4"
+      class="flex  justify-between items-center cursor-pointer select-none text-white"
+    >
+      <Heading
+        htmheading="h3"
+        class="text-lg text-white"
+        stylingclasses="intersect:animate-fade-right intersect:animate-duration-[1200ms]"
+        >Step 4</Heading
+      >
+      
+    </div>
+
+    <div
+      id="content-4"
+      class="max-w-1000 hidden transition-all duration-500 ease-in-out  text-black animate-flip-down animate-ease-out  bg-white border solid border-blue text-center"
+    >
+      <Text
+        class="text-black"
+        
+      >
+      You can make up to 5 submissions - go through step 1-3 for each submission;-)
+      </Text>
+        <img src="/images/step4.png" alt="">
+    </div>
+  </div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const toggles = [
+        { toggle: "toggle-1", content: "content-1" },
+        { toggle: "toggle-2", content: "content-2" },
+        { toggle: "toggle-3", content: "content-3" },
+        { toggle: "toggle-4", content: "content-4" },
+      ];
+    
+      const wrappers = toggles.map(({ toggle }) => {
+        const head = document.getElementById(toggle);
+        return head ? head.closest("div.bg-orange, div.bg-dgrey, div.bg-pink, div.bg-blue") : null;
+      });
+    
+      toggles.forEach(({ toggle, content }, index) => {
+        const header = document.getElementById(toggle);
+        const body = document.getElementById(content);
+        const wrapper = wrappers[index];
+    
+        if (header && body && wrapper) {
+          header.addEventListener("click", () => {
+            const isOpen = !body.classList.contains("hidden");
+    
+            // Luk alle andre og gør dem smalle
+            toggles.forEach((_, i) => {
+              const otherBody = document.getElementById(toggles[i].content);
+              const otherWrapper = wrappers[i];
+              if (otherBody) otherBody.classList.add("hidden");
+              if (otherWrapper) {
+                otherWrapper.classList.remove("flex-[3]");
+                otherWrapper.classList.add("flex-1");
+              }
+            });
+    
+            // Åbn den valgte og gør den bredere (kun hvis den ikke var åben)
+            if (!isOpen) {
+              body.classList.remove("hidden");
+              wrapper.classList.remove("flex-1");
+              wrapper.classList.add("flex-[3]");
+            }
+          });
+        }
+      });
+    });
+    </script>
+    
