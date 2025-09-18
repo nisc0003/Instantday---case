@@ -18,9 +18,14 @@ import Art_buttons from "../components/Art_photography.astro";
     <div
       class="grid col-span-4 col-start-1 place-self-center mx-[20px] md:col-span-2 md:ml-[100px] md:mr-[0px]"
     >
-      <Heading htmheading="h2" class="text-lg">What is instant day?</Heading>
+      <Heading
+        htmheading="h2"
+        class="text-lg"
+        stylingclasses="intersect:animate-fade intersect:animate-delay-100"
+        >What is instant day?</Heading
+      >
 
-      <Text
+      <Text stylingclasses="intersect:animate-fade-right"
         >October 18 is Instant Day - a day all about celebrating instant
         photography. So get out your Polaroid, Instax or whatever instant
         photography camera you are using, and show us your instants. Instant Day
@@ -38,12 +43,12 @@ import Art_buttons from "../components/Art_photography.astro";
       <img
         src="/images/02-amager-forbraending.webp"
         alt="Amager Forbrænding"
-        class="col-start-3 row-start-1 col-span-2 row-span-3 z-20 w-full shadow-lg"
+        class="col-start-3 row-start-1 col-span-2 row-span-3 z-20 w-full shadow-lg intersect:animate-fade intersect:animate-duration-[400ms]"
       />
       <img
         src="/images/04-burger-king.webp"
         alt="Burger King"
-        class="col-start-1 row-start-3 col-span-3 row-span-2 z-10 w-full shadow-lg"
+        class="col-start-1 row-start-3 col-span-3 row-span-2 z-10 w-full shadow-lg intersect:animate-fade intersect:animate-delay-200 intersect:animate-duration-[400ms]"
       />
     </div>
     <div class="grid col-span-4 align-self-center gap-3 row-start-">
@@ -57,9 +62,16 @@ import Art_buttons from "../components/Art_photography.astro";
   <section
     class="section_why_instant bg-pink grid px-[20px] md:px-[60px] py-[30px] md:py-[90px]"
   >
-    <Heading htmheading="h1" class="font-bold">Why instant photos?</Heading>
+    <Heading
+      htmheading="h1"
+      class="font-bold"
+      stylingclasses="intersect:animate-fade intersect:animate-delay-100"
+      >Why instant photos?</Heading
+    >
     <div class="grid gap-2 place-items-center md:grid-cols-3">
-      <div class="md:col-span-2 md:py-10">
+      <div
+        class="md:col-span-2 md:py-10 intersect:animate-fade-right intersect:animate-delay-200"
+      >
         <Text
           >Instant Photography is a testament to life: It all started back in
           the 1940's with a 3 year old kid. She wanted to see her fathers images
@@ -71,9 +83,11 @@ import Art_buttons from "../components/Art_photography.astro";
       <img
         src="/images/why_are_figure.svg"
         alt=""
-        class="h-full md:row-span-2"
+        class="h-full md:row-span-2 intersect:animate-fade-left intersect:animate-delay-300"
       />
-      <div class="md:col-span-2 md:py-10">
+      <div
+        class="md:col-span-2 md:py-10 intersect:animate-fade-right intersect:animate-delay-400"
+      >
         <Text
           >Instant photography turned into big business in the 70's and 80's,
           until the digital era almost killed the industry. The massive amount
