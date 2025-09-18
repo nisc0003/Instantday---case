@@ -1,10 +1,10 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Link from "../components/Link.astro";
-// import { Image } from "astro:assets";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import Hero from "../components/Hero.astro";
+import Art_buttons from "../components/Art_photography.astro";
 ---
 
 <!-- *************************************************************************************************************************************
@@ -16,7 +16,7 @@ import Hero from "../components/Hero.astro";
   <!--_________________________________________________section_what_is_________________________________________________ -->
   <section class="section_what_is grid grid-cols-4 auto-rows-auto mt-20 mb-20">
     <div
-      class="grid col-span-4 col-start-1 place-self-center mx-[20px] md:mx-[100px]mx-[20px]"
+      class="grid col-span-4 col-start-1 place-self-center mx-[20px] md:col-span-2 md:ml-[100px] md:mr-[0px]"
     >
       <Heading htmheading="h2" class="text-lg">What is instant day?</Heading>
 
@@ -31,62 +31,127 @@ import Hero from "../components/Hero.astro";
       >
     </div>
     <!-- --- -->
-    <div class="col-span-4 grid grid-cols-1">
-      <div class="col-span-4 grid grid-cols-4 mx-[20px] md:mx-[100px]mx-[20px]">
-        <img
-          src="/images/02-amager-forbraending.webp"
-          alt="Amager Forbrænding"
-          class="col-start-3 row-start-1 col-span-2 row-span-3 z-20 w-full shadow-lg"
-        />
-        <img
-          src="/images/04-burger-king.webp"
-          alt="Burger King"
-          class="col-start-1 row-start-3 col-span-3 row-span-2 z-10 w-full shadow-lg"
-        />
-      </div>
-      <div class="grid row-span-2 align-self-center gap-3">
-        <div class="h-3 md:h-6 w-full bg-orange"></div>
-        <div class="h-3 md:h-6 w-full bg-blue"></div>
-        <div class="h-3 md:h-6 w-full bg-black"></div>
-        <div class="h-3 md:h-6 w-full bg-pink"></div>
-      </div>
+
+    <div
+      class="col-span-4 row-span-2 grid grid-cols-4 mx-[20px] md:mr-[100px] ml-[0px] md:col-span-2 gap-3 place-items-center"
+    >
+      <img
+        src="/images/02-amager-forbraending.webp"
+        alt="Amager Forbrænding"
+        class="col-start-3 row-start-1 col-span-2 row-span-3 z-20 w-full shadow-lg"
+      />
+      <img
+        src="/images/04-burger-king.webp"
+        alt="Burger King"
+        class="col-start-1 row-start-3 col-span-3 row-span-2 z-10 w-full shadow-lg"
+      />
+    </div>
+    <div class="grid col-span-4 align-self-center gap-3 row-start-">
+      <div class="h-3 md:h-6 w-full bg-orange"></div>
+      <div class="h-3 md:h-6 w-full bg-blue"></div>
+      <div class="h-3 md:h-6 w-full bg-black"></div>
+      <div class="h-3 md:h-6 w-full bg-pink"></div>
     </div>
   </section>
-
   <!-- _________________________________________________section_why_instant_________________________________________________ -->
   <section
     class="section_why_instant bg-pink grid px-[20px] md:px-[60px] py-[30px] md:py-[90px]"
   >
-    <Heading htmheading="h2" class="text-lg">Why instant photos?</Heading>
-    <div class="grid gap-2 place-items-center">
-      <Text
-        >Instant Photography is a testament to life: It all started back in the
-        1940's with a 3 year old kid. She wanted to see her fathers images right
-        away. The father, Edwin Land, embarked on a mission: To invent instant
-        photography. Half a decade later, Edwin Land launched Instant
-        photography and established the Polaroid brand.
-      </Text>
-      <img src="/images/why_are_figure.svg" alt="" />
-      <Text
-        >Instant photography turned into big business in the 70's and 80's,
-        until the digital era almost killed the industry. The massive amount of
-        time wasted on the small screens have spurred a counterreaction:
-        Analogue, off-line experiences have become popular again. And instant
-        photography is just that: An analogue, life-affirming and tactile
-        photography experience. So let's celebrate life, and make memories:-)
-      </Text>
+    <Heading htmheading="h1" class="font-bold">Why instant photos?</Heading>
+    <div class="grid gap-2 place-items-center md:grid-cols-3">
+      <div class="md:col-span-2 md:py-10">
+        <Text
+          >Instant Photography is a testament to life: It all started back in
+          the 1940's with a 3 year old kid. She wanted to see her fathers images
+          right away. The father, Edwin Land, embarked on a mission: To invent
+          instant photography. Half a decade later, Edwin Land launched Instant
+          photography and established the Polaroid brand.
+        </Text>
+      </div>
+      <img
+        src="/images/why_are_figure.svg"
+        alt=""
+        class="h-full md:row-span-2"
+      />
+      <div class="md:col-span-2 md:py-10">
+        <Text
+          >Instant photography turned into big business in the 70's and 80's,
+          until the digital era almost killed the industry. The massive amount
+          of time wasted on the small screens have spurred a counterreaction:
+          Analogue, off-line experiences have become popular again. And instant
+          photography is just that: An analogue, life-affirming and tactile
+          photography experience. So let's celebrate life, and make memories:-)
+        </Text>
+      </div>
     </div>
   </section>
   <!-- _________________________________________________section_how_to_________________________________________________ -->
-  <section class="section_how_to bg-green-300">
+  <section
+    class="section_how_to mx-[20px] md:mx-[100px]mx-[20px] mt-20 mb-20 grid text-center"
+  >
     <Heading htmheading="h2" class="text-lg">How to participate</Heading>
   </section>
   <!-- _________________________________________________section_inspiration_________________________________________________ -->
-  <section class="section_inspiration bg-orange-300">
-    <Heading htmheading="h2" class="text-lg">inspiration</Heading>
+  <section class="section_inspiration grid grid-cols-1 grid-rows-auto">
+    <div class="text-center bg-blue pt-10 pb-20 row-span-2">
+      <Heading htmheading="h2" class="text-lg">Inspiration</Heading>
+    </div>
+    <div
+      class="grid grid-cols-2 gap-4 px-[20px] md:px-[60px] py-[30px] md:py-[90px] z-20 md:grid-cols-5"
+    >
+      <img
+        src="/images/Kagebordet.webp"
+        alt="Kagebordet"
+        class="w-full h-full object-cover"
+      />
+      <img
+        src="/images/Kunst_Erik_Heide.webp"
+        alt="Kunst Erik Heide"
+        class="w-full h-full object-cover"
+      />
+      <img
+        src="/images/04-burger-king.webp"
+        alt="Burger King"
+        class="w-full h-full object-cover col-span-2 md:col-start-4"
+      />
+      <img
+        src="/images/Symaskine_i_boernehoejde.webp"
+        alt="Symaskine i børnehøjde"
+        class="w-full h-full object-cover md:col-start-3 md:row-start-1"
+      />
+      <img
+        src="/images/Leg_sol_traer.webp"
+        alt="Leg sol træer"
+        class="w-full h-full object-cover md:col-start-5 md:row-start-2 md:object-cover md:h-full"
+      />
+      <img
+        src="/images/02-amager-forbraending.webp"
+        alt="Amager Forbrænding"
+        class="w-full h-full object-cover col-span-2 md:row-start-2"
+      />
+      <img
+        src="/images/01-amager-faelled.webp"
+        alt="Amager Fælled"
+        class="w-full h-full object-cover col-span-2 md:row-start-2 md:col-start-3"
+      />
+    </div>
+    <div class="px-[20px] md:px-[60px] text-center py-10">
+      <Text
+        >You can also get a lot of inspiration from the art Photography scene</Text
+      >
+    </div>
   </section>
   <!-- _________________________________________________share_________________________________________________ -->
-  <section class="share bg-purple-300">
-    <Heading htmheading="h2" class="text-lg">Share</Heading>
+  <section class="share flex flex-col">
+    <Art_buttons />
+    <div class="flex flex-col palce-self-center items-center gap-4 py-10">
+      <Heading htmheading="h2" class="text-lg">Feeling inspired?</Heading>
+
+      <div>
+        <Link variant="secondary" href="/shareyourinstant/"
+          >Share your instant</Link
+        >
+      </div>
+    </div>
   </section>
 </MainLayout>

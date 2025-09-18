@@ -5,10 +5,9 @@ import { Image } from "astro:assets";
 import thumbsup from "../assets/images/thumbsup.png";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
-import PhotoGalleri from "../components/PhotoGalleri.astro"
+import PhotoGalleri from "../components/PhotoGalleri.astro";
 
 const photos = [
-
   {
     src: "/images/02-amager-forbraending.webp",
     title: "Amager Forbrænding",
@@ -110,7 +109,7 @@ const photos = [
     </div>
   </section>
   <!-- _________________________________________________Best of 2025 - nominees_________________________________________________ -->
-  <section class=" grid bg-[var(--color-dgrey)]">
+  <section class="grid bg-[var(--color-dgrey)]">
     <Heading htmheading="h3" class="text-lg">Best of 2025 - nominees</Heading>
     <PhotoGalleri photos={photos} />
   </section>
