@@ -3,6 +3,7 @@ import MainLayout from "../layouts/MainLayout.astro";
 import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import PhotoGalleri from "../components/PhotoGalleri.astro";
+import Link from "../components/Link.astro";
 
 const photos = [
   {
@@ -161,6 +162,15 @@ const photos = [
   
     <PhotoGalleri photos={photos} />
   </section>
+  <div class="flex flex-col palce-self-center items-center gap-4 py-10 bg-dgrey text-white">
+    <Heading size="h3" font="header">Feeling inspired?</Heading>
+
+    <div>
+      <Link variant="primary" href="/shareyourinstant/"
+        >Share your instant</Link
+      >
+    </div>
+  </div>
 
   <!-- Bottom Decorative Lines -->
   <div class="grid grid-cols-12 gap-3 bg-[var(--color-dgrey)]">

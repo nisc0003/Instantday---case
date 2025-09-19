@@ -5,6 +5,7 @@ import Heading from "../components/Heading.astro";
 import Text from "../components/Text.astro";
 import Hero from "../components/Hero.astro";
 import Art_buttons from "../components/Art_photography.astro";
+import Folder from "../components/folder.astro";
 ---
 
 <!-- *************************************************************************************************************************************
@@ -105,6 +106,7 @@ import Art_buttons from "../components/Art_photography.astro";
   id="how-to-participate" class="section_how_to mx-[20px] md:mx-[100px]mx-[20px] mt-20 mb-20 grid text-center"
   >
     <Heading size="h2" font="header">How to participate</Heading>
+    <Folder />
   </section>
   <!-- _________________________________________________section_inspiration_________________________________________________ -->
   <section class="section_inspiration grid grid-cols-1 grid-rows-auto">
@@ -162,10 +164,10 @@ import Art_buttons from "../components/Art_photography.astro";
   <section class="share flex flex-col">
     <Art_buttons />
     <div class="flex flex-col palce-self-center items-center gap-4 py-10">
-      <Heading size="h2" font="header">Feeling inspired?</Heading>
+      <Heading size="h3" font="header">Feeling inspired?</Heading>
 
       <div>
-        <Link variant="secondary" href="/shareyourinstant/"
+        <Link variant="primary" href="/shareyourinstant/"
           >Share your instant</Link
         >
       </div>
