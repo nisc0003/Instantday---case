@@ -6,31 +6,37 @@ const launch = "2025-10-18 08:00";
 ---
 
 <section
-  class="bg-[url('/images/instant_hero_photo.webp')] bg-cover bg-center place-content-center grid"
+  class="bg-[url('/images/instant_hero_photo.webp')] bg-cover bg-center grid place-content-center"
   style="min-height: calc(100vh - 20vh);"
 >
   <div
-    class="grid grid-cols-10 auto-rows-auto grid-rows-[min-content] text-center w-fill"
+    class="grid grid-cols-10 auto-rows-auto grid-rows-[min-content] text-center w-full justify-items-center"
   >
     <Heading
       htmlheading="h1"
       size="hero"
       font="header"
-      stylingclasses="text-center text-orange text-balance text-center col-span-10 row-start-1 col-start-1 intersect:animate-fade intersect:animate-delay-100 text-shadow-lg place-self-buttom-center"
-      >InstantDay <br /> 2025</Heading
+      stylingclasses="text-orange text-balance col-span-10 row-start-1 col-start-1 place-self-center intersect:animate-fade intersect:animate-delay-100 text-shadow-lg"
     >
-    <div class="col-start-4 col-span-4"><FlipClock target={launch} /></div>
+      InstantDay <br /> 2025
+    </Heading>
 
-    <div class="col-start-4 col-span-4 col-start- place-self-top mt-2">
-      <Link variant="primary" size="large" href="/shareyourinstant/"
-        >Share your instant</Link
-      >
+    <!-- Center the FlipClock in its 4-column span -->
+    <div class="col-start-4 col-span-4 justify-self-center">
+      <FlipClock target={launch} />
     </div>
+
+    <!-- Center the button and fix invalid utilities -->
+    <div class="col-start-4 col-span-4 self-start mt-2 justify-self-center">
+      <Link variant="primary" size="large" href="/shareyourinstant/">
+        Share your instant
+      </Link>
+    </div>
+
     <img
       class="col-start-8 col-span-2 row-start-2 row-span-2 pl-20"
       src="/images/hero_figure.svg"
-      alt="drawing of the maskot hodling up a sign saying 18th october"
+      alt="drawing of the mascot holding up a sign saying 18th October"
     />
-    <!-- ------------------- -->
   </div>
 </section>
