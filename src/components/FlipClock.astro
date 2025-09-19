@@ -44,7 +44,7 @@ const { target, showLabels = true } = Astro.props as Props;
       </div>
     </div>
 
-    <div class="sep">:</div>
+    <div class="sep  text-[var(--color-primary)]">:</div>
 
     <!-- Hours -->
     <div class="flex items-center gap-2 sm:gap-3">
@@ -66,7 +66,7 @@ const { target, showLabels = true } = Astro.props as Props;
       </div>
     </div>
 
-    <div class="sep">:</div>
+    <div class="sep  text-[var(--color-primary)]">:</div>
 
     <!-- Minutes -->
     <div class="flex items-center gap-2 sm:gap-3">
@@ -90,7 +90,7 @@ const { target, showLabels = true } = Astro.props as Props;
   </div>
 
   {showLabels && (
-    <div class="mt-3 flex justify-center gap-20 text-xs uppercase tracking-wider text-zinc-400">
+    <div class="mt-3 flex justify-center gap-20 text-lx md:text-2xl font-bold uppercasetracking-wider text-[var(--color-primary)]">
       <span class="w-16 text-center">Days</span>
       <span class="w-16 text-center">Hours</span>
       <span class="w-16 text-center">Minutes</span>
