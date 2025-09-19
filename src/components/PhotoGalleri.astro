@@ -12,7 +12,7 @@ export interface Props { photos: Photo[] }
 const { photos } = Astro.props
 ---
 
-<!-- Arrow above mobile gallery -->
+
 <div class="flex justify-end mb-2 pb-4 md:hidden px-4">
 <img src="/images/arrow.svg" alt="arrow pointing right"/>
 </div>
@@ -35,4 +35,4 @@ const { photos } = Astro.props
         <PhotoCard {...p} />
       ))}
     </div>
-  </section>
+ </section>

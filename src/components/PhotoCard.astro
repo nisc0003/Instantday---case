@@ -9,7 +9,7 @@ export interface Props {
 const { src, title, by, description } = Astro.props
 ---
 
-<div class="w-78 lg:w-auto h-[39rem] text-[var(--color-primary)] overflow-hidden flex flex-col">
+<div class="w-78 md:w-auto h-[39rem] text-[var(--color-primary)] overflow-hidden flex flex-col">
     <div class="aspect-[4/5] w-full overflow-hidden">
       <img src={src} alt={title} class="h-full w-full object-cover" />
     </div>
