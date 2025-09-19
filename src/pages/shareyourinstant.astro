@@ -1,6 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Heading from "../components/Heading.astro";
+import Text from "../components/Text.astro";
 import Formular from "../components/Formular.astro";
 import Folder from "../components/folder.astro";
 ---
@@ -9,15 +10,33 @@ import Folder from "../components/folder.astro";
   <!-- How to participate section -->
   <section class="grid grid-cols-4 mx-[20px] md:grid-cols-12 md:mx-[100px] gap-x-10 gap-y-12">
     <Heading 
-      size="h1" 
+      htmlheading="h1" 
       font="header" 
-      stylingclasses="col-span-4 md:col-span-12 mt-10 md:mt-20"
+      stylingclasses="col-span-4 md:col-span-12 mt-10 md:mt-20 mb-0 md:mb-10"
     >
       Share your instant
     </Heading>
+    <Heading
+      htmlheading="h3" 
+      font="header"
+      stylingclasses="col-span-4 md:col-start-2 md:col-end-12 text-center max-w-none -mb-10"
+    >
+      Ready to share your instants? How to participate
+    </Heading>
+
+    <Text 
+      teksttype="brødtekst"
+      stylingclasses="col-span-4 md:col-start-4 md:col-end-10 text-center"
+    >
+      So: Got an instant photo ready for the public? In order to take part in Instant Day:
+    </Text>
   </section>
   
-  <Folder></Folder>
+  <section class="grid grid-cols-4 md:grid-cols-12 mx-[20px] md:mx-[100px] gap-x-10 gap-y-12">
+    <div class="col-span-4 md:col-start-3 md:col-end-11">
+      <Folder />
+    </div>
+  </section>
 
   <!-- Submit section -->
   <section>
